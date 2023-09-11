@@ -6,7 +6,7 @@ function Search() {
       <input
         type="search"
         placeholder="what do you want to watch"
-        className=" bg-transparent text-white  outline-none border-none "
+        className=" bg-transparent text-white  outline-none border-none  text-[10px] w-full"
       />
       <span>{Icons.searchIcon()}</span>
     </div>
