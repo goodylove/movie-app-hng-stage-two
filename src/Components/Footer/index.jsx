@@ -4,6 +4,7 @@ function Footer() {
   return (
     <section className="w-full flex justify-center mt-5 ">
       <div className="w-[492px] h-[145px] flex flex-col gap-6">
+        {/* footer icons */}
         <div className="flex gap-8 items-center justify-center">
           {Icons.faceBookIcon()}
           {Icons.instagramIcon()}
