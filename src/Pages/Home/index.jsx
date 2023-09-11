@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Icons } from "./../../constants/icons";
 import Search from "./../../Components/searchInput/index";
 import MovieCard from "../../Components/movieCard";
+import Footer from "./../../Components/Footer/index";
 
 function Home() {
   const [toggleNavItem, setToggleNavItem] = useState(false);
@@ -105,7 +106,7 @@ function Home() {
       {/* hero section ends here */}
 
       <section className="w-full flex flex-col justify-center items-center">
-        <div className="w-[90%] flex justify-between mt-4 items-center">
+        <div className="w-[90%] flex justify-between my-6 items-center">
           <h2 className="md:text-[36px] leading-[46.83px] font-[700] text-[20px]">
             Featured Movie
           </h2>
@@ -114,7 +115,9 @@ function Home() {
           </p>
         </div>
 
-        <div className="grid  lg:grid-cols-4 w-[90%] md:grid-cols-3 sm:grid-cols-2 grid-cols-1    justify-items-center">
+        {/* top 10 movies display */}
+
+        <div className="grid  lg:grid-cols-4 w-[90%] md:grid-cols-3 sm:grid-cols-2 grid-cols-1    justify-items-center col gap-x-8 gap-y-10">
           <MovieCard />
           <MovieCard />
           <MovieCard />
@@ -127,6 +130,8 @@ function Home() {
           <MovieCard />
         </div>
       </section>
+      {/* footer section */}
+      <Footer />
     </main>
   );
 }

@@ -1,17 +1,34 @@
+import { useState } from "react";
+import { MdFavorite, MdFavoriteBorder } from "react-icons/md";
+
 function MovieCard() {
+  const [toogleFavoriteIcon, setToggleFavoriteIcon] = useState(false);
   return (
     // movie card
-    <div className="w-[250px] h-[490px]" data-testid="movie-card">
+    <div className="w-[250px] h-[490px]" data-testid="movie-card relative">
+      {/* favourite icon */}
+
+      <div
+        className=" bg-slate-400 h-5  w-5 rounded-full  flex justify-center items-center   absolute   ml-48 mt-6  cursor-pointer"
+        onClick={() => setToggleFavoriteIcon((prev) => !prev)}
+      >
+        {toogleFavoriteIcon ? (
+          <MdFavorite className="" />
+        ) : (
+          <MdFavoriteBorder className="text-white text-md  " />
+        )}
+      </div>
+
       {/* movie poster */}
       <img
         src="/assets/Poster.png"
         alt=""
-        className="w-[250px] h-[370px]"
+        className="w-[250px] h-[370px] "
         data-testid="movie-poster"
       />
       {/* movie release data */}
       <h4
-        className="text-[12px] leading-[15.62px]"
+        className="text-[12px] leading-[15.62px] my-3"
         data-testid="movie-release-date"
       >
         USA, 2016 - Current
@@ -25,7 +42,7 @@ function MovieCard() {
         Stranger Things
       </h2>
 
-      <div className="flex gap-8">
+      <div className="flex gap-8 text-[10px] my-2">
         <div className="flex items-center gap-2">
           <img src="/assets/imb.png" alt="" />
           <span>850/100</span>
