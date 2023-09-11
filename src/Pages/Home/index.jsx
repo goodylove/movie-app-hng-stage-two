@@ -85,7 +85,7 @@ function Home() {
             <div className=" md:hidden  flex  w-full items-center  justify-between py-1 px-1 gap-3  ">
               <Search />
               <span
-                className="text-white cursor-pointer"
+                className="text-white cursor-pointer text-[15px]"
                 onClick={handleRemoveMobileSearch}
               >
                 Cancel

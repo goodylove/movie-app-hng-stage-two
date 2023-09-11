@@ -5,8 +5,8 @@ import MovieDetails from "./Pages/MovieDetails";
 function App() {
   return (
     <div className="App">
-      {/* <Home /> */}
-      <MovieDetails />
+      <Home />
+      {/* <MovieDetails /> */}
     </div>
   );
 }
