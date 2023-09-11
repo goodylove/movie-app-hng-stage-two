@@ -2,7 +2,6 @@ import { useState } from "react";
 
 import { Icons } from "./../../constants/icons";
 import Search from "./../../Components/searchInput/index";
-// import ImbdLogo from "../../../pu"
 
 function Home() {
   const [toggleNavItem, setToggleNavItem] = useState(false);
@@ -74,29 +73,32 @@ function Home() {
         </div>
 
         {/* hero section movie title */}
-        <div className="text-white w-[404px] h-[285px] flex flex-col gap-4  md:ml-24   md:mt-7 m-5 p-2">
-          <h3 className="text-[48px] leading-[56px] font-[700]">
-            John Wick 3 : Parabellum
-          </h3>
-          <div className="flex gap-8">
-            <div className="flex items-center gap-2">
-              <img src="/assets/imb.png" alt="" />
-              <span>850/100</span>
+        <div className="flex items-center  justify-between">
+          <div className="text-white w-[404px] h-[285px] flex flex-col gap-4  md:ml-24   md:mt-7 m-5 p-2">
+            <h3 className="text-[48px] leading-[56px] font-[700]">
+              John Wick 3 : Parabellum
+            </h3>
+            <div className="flex gap-8">
+              <div className="flex items-center gap-2">
+                <img src="/assets/imb.png" alt="" />
+                <span>850/100</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <img src="/assets/PngItem.png" alt="" />
+                <span>76%</span>
+              </div>
             </div>
-            <div className="flex items-center gap-2">
-              <img src="/assets/PngItem.png" alt="" />
-              <span>76%</span>
-            </div>
+            <p className="text-white max-w-[302px] text-[14px] ">
+              John Wick is on the run after killing a member of the
+              international assassins' guild, and with a $14 million price tag
+              on his head, he is the target of hit men and women everywhere.
+            </p>
+            <button className="flex bg-[#BE123C]  w-[109px] text-[9px] gap-1 justify-center items-center rounded-sm    px-2 py-2">
+              {Icons.videoIcon()}
+              WATCH TRAILER
+            </button>
           </div>
-          <p className="text-white max-w-[302px] text-[14px] ">
-            John Wick is on the run after killing a member of the international
-            assassins' guild, and with a $14 million price tag on his head, he
-            is the target of hit men and women everywhere.
-          </p>
-          <button className="flex bg-[#BE123C]  w-[109px] text-[9px] gap-1 justify-center items-center rounded-sm    px-2 py-2">
-            {Icons.videoIcon()}
-            WATCH TRAILER
-          </button>
+          <img src="/assets/Pagination Box.png" alt="" className="pr-5" />
         </div>
       </section>
       {/* hero section ends here */}
