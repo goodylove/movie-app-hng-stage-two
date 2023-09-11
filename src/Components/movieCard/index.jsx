@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { MdFavorite, MdFavoriteBorder } from "react-icons/md";
 
-function MovieCard() {
-  const [toogleFavoriteIcon, setToggleFavoriteIcon] = useState(false);
+function MovieCard({ favourite, handleClick }) {
   return (
     // movie card
     <div className="w-[250px] h-[490px]" data-testid="movie-card relative">
@@ -10,9 +9,9 @@ function MovieCard() {
 
       <div
         className=" bg-slate-400 h-5  w-5 rounded-full  flex justify-center items-center   absolute   ml-48 mt-6  cursor-pointer"
-        onClick={() => setToggleFavoriteIcon((prev) => !prev)}
+        onClick={handleClick}
       >
-        {toogleFavoriteIcon ? (
+        {favourite ? (
           <MdFavorite className="" />
         ) : (
           <MdFavoriteBorder className="text-white text-md  " />

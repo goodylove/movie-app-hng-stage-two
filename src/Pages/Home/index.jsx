@@ -4,23 +4,45 @@ import { Icons } from "./../../constants/icons";
 import Search from "./../../Components/searchInput/index";
 import MovieCard from "../../Components/movieCard";
 import Footer from "./../../Components/Footer/index";
+import { GrFormClose } from "react-icons/gr";
 
 function Home() {
   const [toggleNavItem, setToggleNavItem] = useState(false);
+  const [toogleFavoriteIcon, setToggleFavoriteIcon] = useState(false);
 
   // this hanlder controls the toggling of Nav items for both destop and mobile devices
   const handleToogleNavItem = () => {
     setToggleNavItem((prev) => !prev);
   };
 
-  // removes the mobile search component
+  // remove the mobile search component
   const handleRemoveMobileSearch = () => {
     setToggleNavItem(false);
   };
 
+  const handleSaveFavorites = () => {
+    setToggleFavoriteIcon((prev) => !prev);
+  };
+
   return (
-    <main className="w-full bg-white">
+    <main className="w-full bg-white relative">
       {/* hero section starts here */}
+      {/* popup  */}
+
+      {toogleFavoriteIcon && (
+        <div className="bg-white fixed rounded-sm    gap-3 z-50  p-2 notification top-20  right-0 ">
+          <div className="flex  justify-end ">
+            <GrFormClose
+              className="text-[12px] font-[800] cursor-pointer"
+              onClick={() => setToggleFavoriteIcon(false)}
+            />
+          </div>
+          <div className="flex items-center gap-2">
+            <img src="/assets/checked.png" width={30} height={30} alt="" />
+            <span> favourite movie saved</span>
+          </div>
+        </div>
+      )}
 
       <section className="hero">
         {/* nav section starts here */}
@@ -77,7 +99,7 @@ function Home() {
         {/* hero section movie title */}
         <div className="flex items-center  justify-between">
           <div className="text-white w-[404px] h-[285px] flex flex-col gap-4  md:ml-24   md:mt-7 m-5 p-2">
-            <h3 className="text-[48px] leading-[56px] font-[700]">
+            <h3 className="text-[40px] leading-[56px] font-[700]">
               John Wick 3 : Parabellum
             </h3>
             <div className="flex gap-8">
@@ -118,7 +140,10 @@ function Home() {
         {/* top 10 movies display */}
 
         <div className="grid  lg:grid-cols-4 w-[90%] md:grid-cols-3 sm:grid-cols-2 grid-cols-1    justify-items-center col gap-x-8 gap-y-10">
-          <MovieCard />
+          <MovieCard
+            favourite={toogleFavoriteIcon}
+            handleClick={handleSaveFavorites}
+          />
           <MovieCard />
           <MovieCard />
           <MovieCard />
