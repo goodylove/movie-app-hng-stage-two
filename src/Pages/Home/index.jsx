@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import { Icons } from "./../../constants/icons";
 import Search from "./../../Components/searchInput/index";
+import MovieCard from "../../Components/movieCard";
 
 function Home() {
   const [toggleNavItem, setToggleNavItem] = useState(false);
@@ -103,14 +104,27 @@ function Home() {
       </section>
       {/* hero section ends here */}
 
-      <section className="w-full flex justify-center items-center">
+      <section className="w-full flex flex-col justify-center items-center">
         <div className="w-[90%] flex justify-between mt-4 items-center">
-          <h2 className="text-[36px] leading-[46.83px] font-[700]">
+          <h2 className="md:text-[36px] leading-[46.83px] font-[700] text-[20px]">
             Featured Movie
           </h2>
-          <p className="flex items-center gap-2 text-[18px] leading-[24px] font-[400] text-[#BE123C]">
+          <p className="flex items-center gap-2 md:text-[18px] leading-[24px] font-[400] text-[#BE123C] text-[10px]">
             See More {Icons.seeMoreIcon()}
           </p>
+        </div>
+
+        <div className="grid  lg:grid-cols-4 w-[90%] md:grid-cols-3 sm:grid-cols-2 grid-cols-1    justify-items-center">
+          <MovieCard />
+          <MovieCard />
+          <MovieCard />
+          <MovieCard />
+          <MovieCard />
+          <MovieCard />
+          <MovieCard />
+          <MovieCard />
+          <MovieCard />
+          <MovieCard />
         </div>
       </section>
     </main>
