@@ -8,7 +8,7 @@ import logOut from "../../assets/Logout.png";
 function MovieDetailsSideBar() {
   return (
     <div className="w-[20%] border-2 flex  my-2  flex-col rounded-r-[20px]  ">
-      <div className="flex items-center md:gap-5 mb-10 w-full lg:ml-3 gap-1 py-5   justify-start">
+      <div className="flex items-center md:gap-5 mb-10 w-full lg:ml-3 gap-1 py-5  pl-1  justify-start">
         <span className="">{Icons.movieLogo()}</span>
         <span className="xl:text-[20px] font-[700] md:text-[18px] text-[8px] ">
           MovieBox

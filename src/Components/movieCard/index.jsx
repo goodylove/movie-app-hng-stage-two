@@ -1,7 +1,12 @@
 import { useState } from "react";
+
 import { MdFavorite, MdFavoriteBorder } from "react-icons/md";
-import Button from "./../Button/index";
 import { Link } from "react-router-dom";
+
+import Button from "./../Button/index";
+import ImbImg from "../../assets/imb.png";
+import PngItem from "../../assets/PngItem.png";
+import Pagnation from "../../assets/Pagination Box.png";
 
 function MovieCard({ item }) {
   const [toogleFavoriteIcon, setToggleFavoriteIcon] = useState();
@@ -31,7 +36,7 @@ function MovieCard({ item }) {
       {/* movie poster */}
       <img
         src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
-        alt={item.name}
+        alt={item.title}
         className="w-[250px] h-[370px] "
         data-testid="movie-poster"
       />
@@ -40,7 +45,7 @@ function MovieCard({ item }) {
         className="text-[12px] leading-[15.62px] my-3"
         data-testid="movie-release-date"
       >
-        {item.origin_country[0] ?? "Us"}, {item.first_air_date}
+        {/* {item.origin_country[0]}, {item.first_air_date} */}
       </h4>
 
       {/* movie title */}
@@ -48,17 +53,17 @@ function MovieCard({ item }) {
         className="leading-[23.44px] text-[18px] font-[700]"
         data-testid="movie-title"
       >
-        {item.name}
+        {item.title}
       </h2>
 
       <div className="flex gap-8 text-[10px] my-2">
         <div className="flex items-center gap-2">
-          <img src="/assets/imb.png" alt="" />
+          <img src={ImbImg} alt="imb-img" />
           <span>850/100</span>
         </div>
 
         <div className="flex items-center gap-2">
-          <img src="/assets/PngItem.png" alt="" />
+          <img src={PngItem} alt="pngImage" />
           <span>76%</span>
         </div>
       </div>

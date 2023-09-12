@@ -7,7 +7,7 @@ function useFetchMovies() {
   const handleFetchMovies = async function () {
     try {
       const response = await fetch(
-        "https://api.themoviedb.org/3/tv/top_rated?api_key=786a951536a61a5d74e7595f5007b3aa"
+        "https://api.themoviedb.org/3/movie/top_rated?api_key=786a951536a61a5d74e7595f5007b3aa"
       );
       const movie = await response.json();
 

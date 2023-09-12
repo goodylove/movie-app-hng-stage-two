@@ -9,6 +9,7 @@ import Loader from "../../Components/Loader";
 import ImbImg from "../../assets/imb.png";
 import PngItem from "../../assets/PngItem.png";
 import Pagnation from "../../assets/Pagination Box.png";
+import error from "../../assets/Oops404 Error with a broken robot-pana.png";
 
 function Home() {
   const [toggleNavItem, setToggleNavItem] = useState(false);
@@ -136,13 +137,16 @@ function Home() {
             {/* top 10 movies display */}
 
             {data?.length > 0 ? (
-              <div className="grid  lg:grid-cols-4 w-[90%] md:grid-cols-3 sm:grid-cols-2 grid-cols-1    justify-items-center col gap-x-8 gap-y-10">
+              <div className="grid  xl:grid-cols-4  lg:grid-cols-3 w-[90%] md:grid-cols-3 sm:grid-cols-2 grid-cols-1    justify-items-center col gap-x-8 gap-y-10">
                 {data.slice(0, 10).map((item) => (
                   <MovieCard key={item.id} item={item} />
                 ))}
               </div>
             ) : (
-              ""
+              <div className="flex flex-col ga-2 justify-center items-center my-20">
+                <img src={error} alt="error img" width={300} height={300} />
+                <h2 className="text-[20px] font-[700]">Failed To Fetch</h2>
+              </div>
             )}
           </section>
           {/* footer section */}

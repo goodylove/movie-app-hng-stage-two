@@ -4,42 +4,53 @@ import ListImg from "../../assets/List.png";
 import showTimes from "../../assets/Two Tickets.png";
 import GroupImg from "../../assets/Group 52.png";
 import Arrow from "../../assets/Expand Arrow.png";
+import hero from "../../assets/Poster.png";
 
 // movie details main section
 
-function MovieDetailsMain() {
+function MovieDetailsMain({ data }) {
+  // const { runtime, poster_path, title, release_date, overview } = data;
+
+  const totalMinutes = data.runtime;
+  const hours = Math.floor(totalMinutes / 60);
+  const minutes = totalMinutes % 60;
+
+  console.log(`${hours} hours ${minutes} minutes`);
   return (
-    <div className="w-[70%]  px-3 overflow-y-scroll main">
+    <div className="w-[70%]  px-3 overflow-y-scroll main overflow-x-hidden">
       <div className="mt-5 max-w-full">
-        {/* <img
-          src="./assets/Poster.png"
+        <img
+          src={`https://image.tmdb.org/t/p/w500/${data.poster_path}`}
           alt=""
-          className=" max-h-[369px] rounded-lg"
-        /> */}
-        <div className=" flex-col md:flex-row flex md:items-center md:gap-5  md:justify-between w-full ">
-          <div className=" flex-col flex gap-1 md:mt-4 text-[10px] md:text-[17px] md:flex-row mt-4">
-            <span>Top Gun: Maverick • 2022 • PG-13 • 2h 10m</span>
-            <span>Action &nbsp; Drama</span>
+          className="w-full h-[300px] object-cover rounded-lg"
+        />
+
+        <div className=" flex-col md:flex-row flex md:items-center md:gap-5  md:justify-between w-full  font-[500]">
+          <div className=" flex-col flex gap-3 md:mt-4 text-[10px] md:text-[17px] md:flex-row mt-4">
+            <span data-testid="movie-title" className="flex gap-4">
+              {data.title}
+              <span data-testid="movie-release-date">{data.release_date}</span>
+              <span data-testid="movie-runtime">
+                {hours}h {minutes}m
+              </span>
+            </span>
+            {/* <span>Action &nbsp; Drama</span> */}
           </div>
           <div className="text-[10px] md:text-[17px]">
-            <span className="flex items-center  md:justify-end ">
-              {Icons.star()}8.5|350k
+            <span className="flex items-center  md:justify-end  text-[10px]">
+              {Icons.star()}8.5 | 350k
             </span>
           </div>
         </div>
-        <div className="md:flex md:flex-row  mt-3  md:items-center w-full md:justify-between gap-5 flex-col ">
+        <div className="md:flex md:flex-row    md:items-center w-full md:justify-between gap-5 flex-col ">
           <div className="w-full">
-            <p className="md:text-[18px] leadind-[30px] font-[400] text-[13px]">
-              After thirty years, Maverick is still pushing the envelope as a
-              top naval aviator, but must confront ghosts of his past when he
-              leads TOP GUN's elite graduates on a mission that demands the
-              ultimate sacrifice from those chosen to fly it.
+            <p
+              className="md:text-[15px] font-[300] leading-[30px] text-[13px] my-3"
+              data-testid="movie-overview"
+            >
+              {data.overview}
             </p>
-            <div className="flex flex-col gap-3 my-3 md:text-[15px] text-[10px]">
-              <span>Director : Joseph Kosinski</span>
-              <span>Writers : Jim Cash, Jack Epps Jr, Peter Craig</span>
-              <span>Stars : Tom Cruise, Jennifer Connelly, Miles Teller</span>
-            </div>
+
             <div className="flex flex-col md:flex-row gap-3">
               <Button className="text-white bg-[#BE123C] rounded p-2 text-[13px] w-[220px]">
                 Top rated movie #65
