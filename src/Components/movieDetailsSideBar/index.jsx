@@ -2,7 +2,7 @@ import { Icons } from "../../constants/icons";
 
 function MovieDetailsSideBar() {
   return (
-    <div className="w-[20%] border-2 flex  mt-3  flex-col rounded-r-[20px] ">
+    <div className="w-[20%] border-2 flex  my-2  flex-col rounded-r-[20px]  ">
       <div className="flex items-center md:gap-5 mb-10 w-full lg:ml-3 gap-1 py-5   justify-start">
         <span className="">{Icons.movieLogo()}</span>
         <span className="xl:text-[20px] font-[700] md:text-[18px] text-[8px] ">
@@ -10,7 +10,7 @@ function MovieDetailsSideBar() {
         </span>
       </div>
       <div className="flex  w-full ">
-        <ul className="flex flex-col gap-10 w-full ">
+        <ul className="flex flex-col md:gap-8 w-full  gap-20 ">
           <li className="flex items-center gap-7 pl-5">
             <img src="./assets/home.png" alt="" width={20} height={15} />
             <span className="hidden md:flex">Home</span>
@@ -33,9 +33,9 @@ function MovieDetailsSideBar() {
             <img src="./assets/Calendar.png" alt="" width={20} height={15} />
             <span className="hidden md:flex">Upcoming</span>
           </li>
-          <li className="bg-[#F8E7EB]  max-w-[170px] h-[190px] rounded-3xl border-2 border-[#BE123C] md:flex justify-center flex-col items-center ml-5 hidden">
+          <li className="bg-[#F8E7EB]  max-w-[170px]  rounded-3xl border-[1px] border-[#BE123C] md:flex justify-center flex-col items-center ml-5 hidden">
             <div>
-              <p className="leading-[22.5px] xl:text-[17px] xl:w-[137px] h-[69px] text-[#333333] text-[14px] ">
+              <p className="leading-[21px] xl:text-[16px] xl:w-[137px] h-[69px] text-[#333333] text-[14px]  ">
                 Play movie quizes and earn free tickets
               </p>
             </div>
@@ -43,11 +43,11 @@ function MovieDetailsSideBar() {
               {" "}
               50k people are playing now
             </p>
-            <button className="bg-[#f7c1ce] text-[#BE123C] rounded-full text-[10px] font-[700] p-1 w-[100px]">
+            <button className="bg-[#f7c1ce] text-[#BE123C] rounded-full text-[10px] font-[700] p-1 w-[100px] my-2">
               start playing
             </button>
           </li>
-          <li className="flex items-center pl-5  gap-7">
+          <li className="flex items-center pl-5  gap-7 mb-3">
             <img src="./assets/Logout.png" alt="" width={20} height={20} />
             <span className="hidden md:flex">Log out</span>
           </li>

@@ -1,12 +1,17 @@
 import Home from "./Pages/Home/index";
-import "./App.css";
 import MovieDetails from "./Pages/MovieDetails";
+import { Routes, Route } from "react-router-dom";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      {/* <Home /> */}
-      <MovieDetails />
+      <Routes>
+        <Route path="/" element={<MovieDetails />} />
+        <Route path="/moviedetails/:id" element={<Home />} />
+        <Route path="*" element={"page 404"} />
+      </Routes>
+      {/* <MovieDetails /> */}
     </div>
   );
 }

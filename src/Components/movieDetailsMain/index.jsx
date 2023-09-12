@@ -1,10 +1,11 @@
-import { icons } from "react-icons/lib";
 import Button from "../Button";
 import { Icons } from "../../constants/icons";
 
+// movie details main section
+
 function MovieDetailsMain() {
   return (
-    <div className="w-[70%]  px-3">
+    <div className="w-[70%]  px-3 overflow-y-scroll main">
       <div className="mt-5 max-w-full">
         <img
           src="./assets/Poster.png"
