@@ -1,27 +1,37 @@
 import { useState } from "react";
 import { MdFavorite, MdFavoriteBorder } from "react-icons/md";
+import Button from "./../Button/index";
+import { Link } from "react-router-dom";
 
-function MovieCard({ favourite, handleClick }) {
+function MovieCard({ item }) {
+  const [toogleFavoriteIcon, setToggleFavoriteIcon] = useState();
+
+  const handleSaveFavorites = () => {
+    setToggleFavoriteIcon((prev) => !prev);
+  };
   return (
     // movie card
-    <div className="w-[250px] h-[490px]" data-testid="movie-card relative">
+    <div
+      className="w-[250px] h-[490px] cursor-pointer"
+      data-testid="movie-card"
+    >
       {/* favourite icon */}
 
       <div
         className=" bg-slate-400 h-5  w-5 rounded-full  flex justify-center items-center   absolute   ml-48 mt-6  cursor-pointer"
-        onClick={handleClick}
+        onClick={handleSaveFavorites}
       >
-        {favourite ? (
+        {toogleFavoriteIcon ? (
           <MdFavorite className="" />
         ) : (
-          <MdFavoriteBorder className="text-white text-md  " />
+          <MdFavoriteBorder className="text-white text-md     " />
         )}
       </div>
 
       {/* movie poster */}
       <img
-        src="/assets/Poster.png"
-        alt=""
+        src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
+        alt={item.name}
         className="w-[250px] h-[370px] "
         data-testid="movie-poster"
       />
@@ -30,7 +40,7 @@ function MovieCard({ favourite, handleClick }) {
         className="text-[12px] leading-[15.62px] my-3"
         data-testid="movie-release-date"
       >
-        USA, 2016 - Current
+        {item.origin_country[0] ?? "Us"}, {item.first_air_date}
       </h4>
 
       {/* movie title */}
@@ -38,7 +48,7 @@ function MovieCard({ favourite, handleClick }) {
         className="leading-[23.44px] text-[18px] font-[700]"
         data-testid="movie-title"
       >
-        Stranger Things
+        {item.name}
       </h2>
 
       <div className="flex gap-8 text-[10px] my-2">
@@ -53,9 +63,11 @@ function MovieCard({ favourite, handleClick }) {
         </div>
       </div>
 
-      <span className="text-[12px] leading-[15.62px]">
-        Action, Adventure, Horror
-      </span>
+      <Link to={`/moviedetails/${item.id}`}>
+        <Button className="text-[12px] leading-[15.62px] bg-black text-white p-1 rounded">
+          View More
+        </Button>
+      </Link>
     </div>
   );
 }

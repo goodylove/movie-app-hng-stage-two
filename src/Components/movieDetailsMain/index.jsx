@@ -1,5 +1,9 @@
 import Button from "../Button";
 import { Icons } from "../../constants/icons";
+import ListImg from "../../assets/List.png";
+import showTimes from "../../assets/Two Tickets.png";
+import GroupImg from "../../assets/Group 52.png";
+import Arrow from "../../assets/Expand Arrow.png";
 
 // movie details main section
 
@@ -7,11 +11,11 @@ function MovieDetailsMain() {
   return (
     <div className="w-[70%]  px-3 overflow-y-scroll main">
       <div className="mt-5 max-w-full">
-        <img
+        {/* <img
           src="./assets/Poster.png"
           alt=""
           className=" max-h-[369px] rounded-lg"
-        />
+        /> */}
         <div className=" flex-col md:flex-row flex md:items-center md:gap-5  md:justify-between w-full ">
           <div className=" flex-col flex gap-1 md:mt-4 text-[10px] md:text-[17px] md:flex-row mt-4">
             <span>Top Gun: Maverick • 2022 • PG-13 • 2h 10m</span>
@@ -42,26 +46,21 @@ function MovieDetailsMain() {
               </Button>
               <div className="border-2 flex items-center justify-between rounded p-1 w-[220px]">
                 Awards 9 nominations
-                <img src="./assets/Expand Arrow.png" alt="" />
+                <img src={Arrow} alt="arrow" />
               </div>
             </div>
           </div>
           <div className="flex flex-col gap-3   mt-5 md:justify-center  :md:items-center">
             <Button className="text-white bg-[#BE123C]  flex items-center justify-center w-[200px] gap-2  rounded p-2 text-[14px]">
-              <img
-                src="./assets/Two Tickets.png"
-                alt=""
-                width={20}
-                height={20}
-              />
+              <img src={showTimes} alt="show icon" width={20} height={20} />
               See Showtimes
             </Button>
             <Button className="text-black bg-red-200  flex items-center justify-center w-[200px] gap-2  rounded p-2 text-[14px]">
-              <img src="./assets/List.png" alt="" />
+              <img src={ListImg} alt="listicon" />
               More watch options
             </Button>
             <div>
-              <img src="./assets/Group 52.png" alt="" width={200} />
+              <img src={GroupImg} alt="gruopimg" width={200} />
             </div>
           </div>
         </div>
