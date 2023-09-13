@@ -22,7 +22,6 @@ function useFetchMovieDetails(id) {
       setData(movieDetails);
     } catch (error) {
       setError(error.message);
-      console.log(error.message);
     }
   };
 
@@ -33,7 +32,7 @@ function useFetchMovieDetails(id) {
     }, 3000);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [id]);
 
   return { data, loading, error };
 }

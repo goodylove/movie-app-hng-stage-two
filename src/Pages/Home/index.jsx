@@ -160,7 +160,7 @@ function Home() {
                             "
                             >
                               {slider === index && (
-                                <img src={rectangle} alt="rectangle image" />
+                                <img src={rectangle} alt="rectangle" />
                               )}
                             </span>
 
