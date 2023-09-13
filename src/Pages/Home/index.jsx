@@ -18,7 +18,6 @@ function Home() {
 
   const { data, loading, error } = useFetchMovies();
   const { calcMovieRating } = useCalculateRating();
-  console.log(data);
 
   // this hanlder controls the toggling of Nav items for both destop and mobile devices
   const handleToogleNavItem = () => {
@@ -29,6 +28,7 @@ function Home() {
   const handleRemoveMobileSearch = () => {
     setToggleNavItem(false);
   };
+
   const handleActivateSlider = (index) => {
     setSlider(index);
   };
@@ -40,6 +40,8 @@ function Home() {
           <Loader />
         </div>
       )}
+
+      {/* display data if data length is greater than 0 */}
       {data.length > 0 && (
         <main className="w-full bg-white relative">
           {/* hero section starts here */}
@@ -123,6 +125,7 @@ function Home() {
                         {/* John Wick 3 : Parabellum */}
                         {item.title}
                       </h3>
+
                       <div className="flex gap-8">
                         <div className="flex items-center gap-2">
                           <img src={ImbImg} alt="imbImg" />
@@ -133,6 +136,7 @@ function Home() {
                           <span>{calcMovieRating(item.vote_average)}</span>
                         </div>
                       </div>
+
                       <p className="text-white max-w-[302px] text-[14px] ">
                         {item.overview}
                       </p>
@@ -141,6 +145,7 @@ function Home() {
                         WATCH TRAILER
                       </button>
                     </div>
+
                     {/* <img src={Pagnation} alt="" className="pr-5" /> */}
                     <ul className="mr-4 cursor-pointer">
                       {Array.from({ length: 5 }, (_, i) => i + 1).map(
@@ -158,6 +163,7 @@ function Home() {
                                 <img src={rectangle} alt="rectangle image" />
                               )}
                             </span>
+
                             <span> {index + 1}</span>
                           </li>
                         )
@@ -167,6 +173,7 @@ function Home() {
                 </section>
               )
           )}
+
           {/* hero section ends here */}
 
           <section className="w-full flex flex-col justify-center items-center">
@@ -192,6 +199,8 @@ function Home() {
           <Footer />
         </main>
       )}
+
+      {/* display error message if error is true */}
       {error && (
         <div className="flex flex-col ga-2 justify-center items-center my-20">
           <img src={errorImg} alt="error img" width={300} height={300} />

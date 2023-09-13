@@ -9,9 +9,12 @@ import PngItem from "../../assets/PngItem.png";
 
 import useCalculateRating from "../../Hooks/useCalculateRating";
 import useGetUtcTime from "../../Hooks/useGetUtcTime";
+
 function MovieCard({ item }) {
   const [toogleFavoriteIcon, setToggleFavoriteIcon] = useState();
+
   const { calcMovieRating } = useCalculateRating();
+
   const { getDateInUtcFormate } = useGetUtcTime();
 
   const handleSaveFavorites = () => {
@@ -44,6 +47,7 @@ function MovieCard({ item }) {
         className="w-[250px] h-[370px] "
         data-testid="movie-poster"
       />
+
       {/* movie release data */}
       <h4
         className="text-[12px] leading-[15.62px] my-3"
@@ -72,7 +76,7 @@ function MovieCard({ item }) {
         </div>
       </div>
 
-      <Link to={`/moviedetails/${item.id}`}>
+      <Link to={`/movies/${item.id}`}>
         <Button className="text-[12px] leading-[15.62px] bg-black text-white p-1 rounded">
           View More
         </Button>

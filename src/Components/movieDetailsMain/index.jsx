@@ -4,22 +4,17 @@ import ListImg from "../../assets/List.png";
 import showTimes from "../../assets/Two Tickets.png";
 import GroupImg from "../../assets/Group 52.png";
 import Arrow from "../../assets/Expand Arrow.png";
-import hero from "../../assets/Poster.png";
+import useGetUtcTime from "../../Hooks/useGetUtcTime";
 
 // movie details main section
 
 function MovieDetailsMain({ data }) {
+  const { getDateInUtcFormate } = useGetUtcTime();
+
   const totalMinutes = data.runtime;
   const hours = Math.floor(totalMinutes / 60);
   const minutes = totalMinutes % 60;
 
-  const getDateInUtcFormate = (date) => {
-    const today = new Date(date);
-    const utcDateString = today.toUTCString();
-    return utcDateString;
-  };
-
-  console.log(`${hours} hours ${minutes} minutes`);
   return (
     <div className="md:w-[70%]  px-3 overflow-y-scroll main overflow-x-hidden w-[100%]">
       <div className="mt-5 max-w-full">
@@ -40,8 +35,8 @@ function MovieDetailsMain({ data }) {
                 {hours}h {minutes}m
               </span>
             </span>
-            {/* <span>Action &nbsp; Drama</span> */}
           </div>
+
           <div className="text-[10px] md:text-[17px]">
             <span className="flex items-center  md:justify-end  text-[10px]">
               {Icons.star()}
@@ -68,6 +63,7 @@ function MovieDetailsMain({ data }) {
               </div>
             </div>
           </div>
+
           <div className="flex flex-col gap-3   mt-5 md:justify-center  md:items-center items-center">
             <Button className="text-white bg-[#BE123C]  flex items-center justify-center w-[200px] gap-2  rounded p-2 text-[14px]">
               <img src={showTimes} alt="show icon" width={20} height={20} />

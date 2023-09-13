@@ -14,31 +14,37 @@ function MovieDetailsSideBar() {
           MovieBox
         </span>
       </div>
+
       <div className="flex  w-full ">
         <ul className="flex flex-col md:gap-7 w-full  gap-20 ">
           <li className="flex items-center gap-7 pl-5">
             <img src={homeImg} alt="home icon" width={20} height={15} />
             <span className="hidden md:flex">Home</span>
           </li>
+
           <li className="flex items-center  gap-7 bg-[#F8E7EB] py-3  relative pl-5">
             <img src={moveProject} alt="video icon" width={20} height={15} />
             <div className="bg-[#BE123C] absolute h-12   top-0 right-0 w-1"></div>
             <span className="hidden md:flex">Movies</span>
           </li>
+
           <li className="flex  gap-7  items-center  pl-5 ">
             <img src={TvShow} alt="tv show icon" width={20} height={15} />
             <span className="hidden md:flex">Tv series</span>
           </li>
+
           <li className="flex  gap-7  items-center  pl-5 ">
             <img src={Calander} alt="calander icon" width={20} height={15} />
             <span className="hidden md:flex">Upcoming</span>
           </li>
+
           <li className="bg-[#F8E7EB]  max-w-[170px]  rounded-3xl border-[1px] border-[#BE123C] md:flex md:justify-center flex-col md:items-center ml-5 hidden">
             <div>
               <p className="leading-[21px] xl:text-[16px] xl:w-[137px] text-[#333333] text-[14px]  mt-2 ml-4 ">
                 Play movie quizes and earn free tickets
               </p>
             </div>
+
             <p className="text-[12px] leading-[18px] font-[500] w-[139px] ">
               50k people are playing now
             </p>

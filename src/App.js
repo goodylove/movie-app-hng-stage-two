@@ -11,10 +11,8 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/moviedetails/:id" element={<MovieDetails />} />
-        <Route path="*" element={"page 404"} />
+        <Route path="/movies/:id" element={<MovieDetails />} />
       </Routes>
-      {/* <MovieDetails /> */}
     </div>
   );
 }

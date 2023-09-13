@@ -9,9 +9,12 @@ import Loader from "../../Components/Loader";
 
 function MovieDetails() {
   const { id } = useParams();
+
   const { data, loading, error } = useFetchMovieDetails(id);
 
   const navigate = useNavigate();
+
+  console.log(data);
   return (
     <>
       <BsFillArrowLeftCircleFill
@@ -28,11 +31,12 @@ function MovieDetails() {
       {error && data === undefined ? (
         <div className="h-screen flex justify-center items-center flex-col font-[400] ">
           <img src={SorryImg} alt="" />
-          <span>{error}</span>
+          <span>{error} </span>
         </div>
       ) : (
         ""
       )}
+
       {data !== undefined && (
         <main className="flex   h-screen  justify-center gap-10  ">
           <MovieDetailsSideBar />
