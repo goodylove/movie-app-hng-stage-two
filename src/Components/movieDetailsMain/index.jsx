@@ -15,6 +15,12 @@ function MovieDetailsMain({ data }) {
   const hours = Math.floor(totalMinutes / 60);
   const minutes = totalMinutes % 60;
 
+  const getDateInUtcFormate = (date) => {
+    const today = new Date(date);
+    const utcDateString = today.toUTCString();
+    return utcDateString;
+  };
+
   console.log(`${hours} hours ${minutes} minutes`);
   return (
     <div className="md:w-[70%]  px-3 overflow-y-scroll main overflow-x-hidden w-[100%]">
@@ -29,7 +35,9 @@ function MovieDetailsMain({ data }) {
           <div className=" flex-col flex gap-3 md:mt-4 text-[10px] md:text-[17px] md:flex-row mt-4">
             <span data-testid="movie-title" className="flex gap-4">
               {data.title}
-              <span data-testid="movie-release-date">{data.release_date}</span>
+              <span data-testid="movie-release-date">
+                {getDateInUtcFormate(data.release_date)}
+              </span>
               <span data-testid="movie-runtime">
                 {hours}h {minutes}m
               </span>
@@ -38,7 +46,8 @@ function MovieDetailsMain({ data }) {
           </div>
           <div className="text-[10px] md:text-[17px]">
             <span className="flex items-center  md:justify-end  text-[10px]">
-              {Icons.star()}8.5 | 350k
+              {Icons.star()}
+              {Number.parseFloat(data.vote_average)} | 350k
             </span>
           </div>
         </div>

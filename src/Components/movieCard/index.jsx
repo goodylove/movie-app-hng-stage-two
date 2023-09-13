@@ -6,13 +6,20 @@ import { Link } from "react-router-dom";
 import Button from "./../Button/index";
 import ImbImg from "../../assets/imb.png";
 import PngItem from "../../assets/PngItem.png";
-import Pagnation from "../../assets/Pagination Box.png";
 
+import useCalculateRating from "../../Hooks/useCalculateRating";
 function MovieCard({ item }) {
   const [toogleFavoriteIcon, setToggleFavoriteIcon] = useState();
+  const { calcMovieRating } = useCalculateRating();
 
   const handleSaveFavorites = () => {
     setToggleFavoriteIcon((prev) => !prev);
+  };
+
+  const getDateInUtcFormate = (date) => {
+    const today = new Date(date);
+    const utcDateString = today.toUTCString();
+    return utcDateString;
   };
   return (
     // movie card
@@ -45,7 +52,7 @@ function MovieCard({ item }) {
         className="text-[12px] leading-[15.62px] my-3"
         data-testid="movie-release-date"
       >
-        {item.release_date}
+        {getDateInUtcFormate(item.release_date)}
       </h4>
 
       {/* movie title */}
@@ -64,7 +71,7 @@ function MovieCard({ item }) {
 
         <div className="flex items-center gap-2">
           <img src={PngItem} alt="pngImage" />
-          <span>76%</span>
+          <span>{calcMovieRating(item.vote_average)}</span>
         </div>
       </div>
 

@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+export const API_KEY = process.env.REACT_APP_MOVIE_API_KEY;
+
 function useFetchMovieDetails(id) {
   const [data, setData] = useState();
   const [loading, setLoading] = useState(true);
@@ -8,7 +10,7 @@ function useFetchMovieDetails(id) {
   const handleFetchMovieDetails = async () => {
     try {
       const response = await fetch(
-        `https://api.themoviedb.org/3/movie/${id}?api_key=786a951536a61a5d74e7595f5007b3aa`
+        `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`
       );
       const movieDetails = await response.json();
 

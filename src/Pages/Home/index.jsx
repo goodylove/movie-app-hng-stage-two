@@ -8,15 +8,16 @@ import useFetchMovies from "../../Hooks/useFetchMovies";
 import Loader from "../../Components/Loader";
 import ImbImg from "../../assets/imb.png";
 import PngItem from "../../assets/PngItem.png";
-import Pagnation from "../../assets/Pagination Box.png";
 import errorImg from "../../assets/Oops404 Error with a broken robot-pana.png";
-import poster from "../../assets/Poster.png";
+import rectangle from "../../assets/Rectangle 1.png";
+import useCalculateRating from "./../../Hooks/useCalculateRating";
 
 function Home() {
   const [toggleNavItem, setToggleNavItem] = useState(false);
   const [slider, setSlider] = useState(0);
 
   const { data, loading, error } = useFetchMovies();
+  const { calcMovieRating } = useCalculateRating();
   console.log(data);
 
   // this hanlder controls the toggling of Nav items for both destop and mobile devices
@@ -28,27 +29,8 @@ function Home() {
   const handleRemoveMobileSearch = () => {
     setToggleNavItem(false);
   };
-
-  const extraHeroImageFromData = () => {
-    //  src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
-    const dataImg = data?.slice(0, 5).map((item, index) => {
-      return ``;
-    });
-  };
-  console.log(extraHeroImageFromData);
-
-  const heroStyle = {
-    hero: {
-      height: "500px",
-      width: "100%",
-      objectFit: "cover",
-      backgroundRepeat: " norepeat",
-      backgroundSize: "auto",
-      backgroundPosition: "center",
-    },
-    img: {
-      backgroundImage: `url(${extraHeroImageFromData()})`,
-    },
+  const handleActivateSlider = (index) => {
+    setSlider(index);
   };
 
   return (
@@ -137,7 +119,7 @@ function Home() {
                   {/* hero section movie title */}
                   <div className="flex items-center  justify-between">
                     <div className="text-white w-[404px] h-[285px] flex flex-col gap-4  md:ml-24   md:mt-7 m-5 p-2">
-                      <h3 className="text-[40px] leading-[56px] font-[700]">
+                      <h3 className=" md:text-[40px] text-[30px] leading-[56px] font-[700]">
                         {/* John Wick 3 : Parabellum */}
                         {item.title}
                       </h3>
@@ -148,10 +130,10 @@ function Home() {
                         </div>
                         <div className="flex items-center gap-2">
                           <img src={PngItem} alt="pngitem" />
-                          <span>76%</span>
+                          <span>{calcMovieRating(item.vote_average)}</span>
                         </div>
                       </div>
-                      <p className="text-white max-w-[302px] text-[14px]  leading-5">
+                      <p className="text-white max-w-[302px] text-[14px] ">
                         {item.overview}
                       </p>
                       <button className="flex bg-[#BE123C]  w-[109px] text-[9px] gap-1 justify-center items-center rounded-sm    px-2 py-2">
@@ -159,7 +141,28 @@ function Home() {
                         WATCH TRAILER
                       </button>
                     </div>
-                    <img src={Pagnation} alt="" className="pr-5" />
+                    {/* <img src={Pagnation} alt="" className="pr-5" /> */}
+                    <ul className="mr-4 cursor-pointer">
+                      {Array.from({ length: 5 }, (_, i) => i + 1).map(
+                        (_, index) => (
+                          <li
+                            className="text-white font-[800] relative  flex items-center "
+                            key={index}
+                            onClick={() => handleActivateSlider(index)}
+                          >
+                            <span
+                              className=" absolute left-[-23px] top-3
+                            "
+                            >
+                              {slider === index && (
+                                <img src={rectangle} alt="rectangle image" />
+                              )}
+                            </span>
+                            <span> {index + 1}</span>
+                          </li>
+                        )
+                      )}
+                    </ul>
                   </div>
                 </section>
               )
