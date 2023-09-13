@@ -14,7 +14,6 @@ function MovieDetails() {
 
   const navigate = useNavigate();
 
-  console.log(data);
   return (
     <>
       <BsFillArrowLeftCircleFill
