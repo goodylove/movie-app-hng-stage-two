@@ -9,8 +9,6 @@ import hero from "../../assets/Poster.png";
 // movie details main section
 
 function MovieDetailsMain({ data }) {
-  // const { runtime, poster_path, title, release_date, overview } = data;
-
   const totalMinutes = data.runtime;
   const hours = Math.floor(totalMinutes / 60);
   const minutes = totalMinutes % 60;

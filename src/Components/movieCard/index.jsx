@@ -8,19 +8,16 @@ import ImbImg from "../../assets/imb.png";
 import PngItem from "../../assets/PngItem.png";
 
 import useCalculateRating from "../../Hooks/useCalculateRating";
+import useGetUtcTime from "../../Hooks/useGetUtcTime";
 function MovieCard({ item }) {
   const [toogleFavoriteIcon, setToggleFavoriteIcon] = useState();
   const { calcMovieRating } = useCalculateRating();
+  const { getDateInUtcFormate } = useGetUtcTime();
 
   const handleSaveFavorites = () => {
     setToggleFavoriteIcon((prev) => !prev);
   };
 
-  const getDateInUtcFormate = (date) => {
-    const today = new Date(date);
-    const utcDateString = today.toUTCString();
-    return utcDateString;
-  };
   return (
     // movie card
     <div
