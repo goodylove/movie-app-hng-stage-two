@@ -17,7 +17,7 @@ function MovieDetailsMain({ data }) {
 
   console.log(`${hours} hours ${minutes} minutes`);
   return (
-    <div className="w-[70%]  px-3 overflow-y-scroll main overflow-x-hidden">
+    <div className="md:w-[70%]  px-3 overflow-y-scroll main overflow-x-hidden w-[100%]">
       <div className="mt-5 max-w-full">
         <img
           src={`https://image.tmdb.org/t/p/w500/${data.poster_path}`}
@@ -43,7 +43,7 @@ function MovieDetailsMain({ data }) {
           </div>
         </div>
         <div className="md:flex md:flex-row    md:items-center w-full md:justify-between gap-5 flex-col ">
-          <div className="w-full">
+          <div className="w-full flex flex-col items-center">
             <p
               className="md:text-[15px] font-[300] leading-[30px] text-[13px] my-3"
               data-testid="movie-overview"
@@ -61,7 +61,7 @@ function MovieDetailsMain({ data }) {
               </div>
             </div>
           </div>
-          <div className="flex flex-col gap-3   mt-5 md:justify-center  :md:items-center">
+          <div className="flex flex-col gap-3   mt-5 md:justify-center  md:items-center items-center">
             <Button className="text-white bg-[#BE123C]  flex items-center justify-center w-[200px] gap-2  rounded p-2 text-[14px]">
               <img src={showTimes} alt="show icon" width={20} height={20} />
               See Showtimes

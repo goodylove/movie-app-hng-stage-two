@@ -6,16 +6,6 @@
   font-family: "Poppins", sans-serif;
 }
 
-.hero {
-  background-image: url("../public/Poster.png");
-  height: 500px;
-  width: 100%;
-  object-fit: cover;
-  background-repeat: no-repeat;
-  background-size: auto;
-  background-position: center;
-}
-
 .notification {
   animation: notify 0.7s;
   transition: 0.3s ease;

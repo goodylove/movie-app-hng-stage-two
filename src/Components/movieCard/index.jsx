@@ -45,7 +45,7 @@ function MovieCard({ item }) {
         className="text-[12px] leading-[15.62px] my-3"
         data-testid="movie-release-date"
       >
-        {/* {item.origin_country[0]}, {item.first_air_date} */}
+        {item.release_date}
       </h4>
 
       {/* movie title */}
