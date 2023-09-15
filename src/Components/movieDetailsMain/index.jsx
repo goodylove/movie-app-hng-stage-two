@@ -35,13 +35,19 @@ function MovieDetailsMain({ data }) {
 
         <div className=" flex-col md:flex-row flex md:items-center md:gap-5  md:justify-between w-full  font-[500]">
           <div className=" flex-col flex gap-3 md:mt-4 text-[10px] md:text-[17px] md:flex-row mt-4">
-            <span data-testid="movie-title" className="flex gap-4">
-              {data.title}
+            <div className="flex gap-3">
+              <span data-testid="movie-title" className="flex gap-4">
+                {data.title}
+              </span>
               <span data-testid="movie-release-date">
                 {utcDate(data.release_date)}
               </span>
-              <span data-testid="movie-runtime">{data.runtime} minutes</span>
-            </span>
+
+              <div>
+                <span data-testid="movie-runtime">{data.runtime}</span>
+                <span>min</span>
+              </div>
+            </div>
           </div>
 
           <div className="text-[10px] md:text-[17px]">
