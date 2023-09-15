@@ -8,10 +8,6 @@ import Arrow from "../../assets/Expand Arrow.png";
 // movie details main section
 
 function MovieDetailsMain({ data }) {
-  const totalMinutes = data.runtime;
-  const hours = Math.floor(totalMinutes / 60);
-  const minutes = totalMinutes % 60;
-
   const utcDate = (dates) => {
     const inputDate = new Date(dates);
 

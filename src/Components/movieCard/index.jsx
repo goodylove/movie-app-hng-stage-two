@@ -52,8 +52,8 @@ function MovieCard({ item }) {
 
       {/* movie release data */}
       <h4
-        className="text-[12px] leading-[15.62px] my-3"
         data-testid="movie-release-date"
+        className="text-[12px] leading-[15.62px] my-3"
       >
         {formattedDate(item.release_date)}
       </h4>
