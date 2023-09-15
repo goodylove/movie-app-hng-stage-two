@@ -17,7 +17,7 @@ function MovieDetails() {
   return (
     <>
       <BsFillArrowLeftCircleFill
-        className="text-[30px] ml-5 cursor-pointer"
+        className="text-[30px] ml-5 cursor-pointer flex md:hidden"
         onClick={() => navigate("/")}
       />
 

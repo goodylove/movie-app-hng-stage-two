@@ -4,6 +4,7 @@ import moveProject from "../../assets/Movie Projector.png";
 import TvShow from "../../assets/TV Show.png";
 import Calander from "../../assets/Calendar.png";
 import logOut from "../../assets/Logout.png";
+import { Link } from "react-router-dom";
 
 function MovieDetailsSideBar() {
   return (
@@ -17,12 +18,14 @@ function MovieDetailsSideBar() {
 
       <div className="flex  w-full ">
         <ul className="flex flex-col md:gap-7 w-full  gap-20 ">
-          <li className="flex items-center gap-7 pl-5">
+          <li className="flex items-center gap-7 pl-5 hover:bg-[#F8E7EB] py-4">
             <img src={homeImg} alt="home icon" width={20} height={15} />
-            <span className="hidden md:flex">Home</span>
+            <Link to="/">
+              <span className="hidden md:flex">Home</span>
+            </Link>
           </li>
 
-          <li className="flex items-center  gap-7 bg-[#F8E7EB] py-3  relative pl-5">
+          <li className="flex items-center  gap-7 bg-[#F8E7EB] py-3  relative pl-5 hover:bg-[#F8E7EB] py-4">
             <img src={moveProject} alt="video icon" width={20} height={15} />
             <div className="bg-[#BE123C] absolute h-12   top-0 right-0 w-1"></div>
             <span className="hidden md:flex">Movies</span>
@@ -33,12 +36,12 @@ function MovieDetailsSideBar() {
             <span className="hidden md:flex">Tv series</span>
           </li>
 
-          <li className="flex  gap-7  items-center  pl-5 ">
+          <li className="flex  gap-7  items-center  pl-5  hover:bg-[#F8E7EB] py-4">
             <img src={Calander} alt="calander icon" width={20} height={15} />
             <span className="hidden md:flex">Upcoming</span>
           </li>
 
-          <li className="bg-[#F8E7EB]  max-w-[170px]  rounded-3xl border-[1px] border-[#BE123C] md:flex md:justify-center flex-col md:items-center ml-5 hidden">
+          <li className="bg-[#F8E7EB]  max-w-[170px]  hover:bg-[#F8E7EB] py-4 rounded-3xl border-[1px] border-[#BE123C] md:flex md:justify-center flex-col md:items-center ml-5 hidden">
             <div>
               <p className="leading-[21px] xl:text-[16px] xl:w-[137px] text-[#333333] text-[14px]  mt-2 ml-4 ">
                 Play movie quizes and earn free tickets
@@ -52,7 +55,7 @@ function MovieDetailsSideBar() {
               start playing
             </button>
           </li>
-          <li className="flex items-center pl-5  gap-7 mb-3">
+          <li className="flex items-center pl-5  gap-7 mb-3 hover:bg-[#F8E7EB] py-4">
             <img src={logOut} alt="logout icon" width={20} height={20} />
             <span className="hidden md:flex">Log out</span>
           </li>
