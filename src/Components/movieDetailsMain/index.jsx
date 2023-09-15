@@ -4,16 +4,29 @@ import ListImg from "../../assets/List.png";
 import showTimes from "../../assets/Two Tickets.png";
 import GroupImg from "../../assets/Group 52.png";
 import Arrow from "../../assets/Expand Arrow.png";
-import useGetUtcTime from "../../Hooks/useGetUtcTime";
 
 // movie details main section
 
 function MovieDetailsMain({ data }) {
-  const { getDateInUtcFormate } = useGetUtcTime();
-
   const totalMinutes = data.runtime;
   const hours = Math.floor(totalMinutes / 60);
   const minutes = totalMinutes % 60;
+
+  const utcDate = (dates) => {
+    const inputDate = new Date(dates);
+
+    const utcDate = new Date(
+      inputDate.getUTCFullYear(),
+      inputDate.getUTCMonth(),
+      inputDate.getUTCDate(),
+      0,
+      0,
+      0
+    );
+
+    const formattedDate = utcDate.toISOString();
+    return formattedDate;
+  };
 
   return (
     <div className="md:w-[70%]  px-3 overflow-y-scroll main overflow-x-hidden w-[100%]">
@@ -29,11 +42,9 @@ function MovieDetailsMain({ data }) {
             <span data-testid="movie-title" className="flex gap-4">
               {data.title}
               <span data-testid="movie-release-date">
-                {getDateInUtcFormate(data.release_date)}
+                {utcDate(data.release_date)}
               </span>
-              <span data-testid="movie-runtime">
-                {hours}h {minutes}m
-              </span>
+              <span data-testid="movie-runtime">{data.runtime} minutes</span>
             </span>
           </div>
 
