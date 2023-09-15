@@ -4,25 +4,12 @@ import ListImg from "../../assets/List.png";
 import showTimes from "../../assets/Two Tickets.png";
 import GroupImg from "../../assets/Group 52.png";
 import Arrow from "../../assets/Expand Arrow.png";
+import useGetUtcTime from "../../Hooks/useGetUtcTime";
 
 // movie details main section
 
 function MovieDetailsMain({ data }) {
-  const utcDate = (dates) => {
-    const inputDate = new Date(dates);
-
-    const utcDate = new Date(
-      inputDate.getUTCFullYear(),
-      inputDate.getUTCMonth(),
-      inputDate.getUTCDate(),
-      0,
-      0,
-      0
-    );
-
-    const formattedDate = utcDate.toISOString();
-    return formattedDate;
-  };
+  const { formattedDate } = useGetUtcTime();
 
   return (
     <div className="md:w-[70%]  px-3 overflow-y-scroll main overflow-x-hidden w-[100%]">
@@ -40,7 +27,7 @@ function MovieDetailsMain({ data }) {
                 {data.title}
               </span>
               <span data-testid="movie-release-date">
-                {utcDate(data.release_date)}
+                {formattedDate(data.release_date)}
               </span>
 
               <div>
