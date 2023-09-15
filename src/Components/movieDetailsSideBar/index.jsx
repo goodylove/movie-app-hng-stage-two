@@ -25,7 +25,7 @@ function MovieDetailsSideBar() {
             </Link>
           </li>
 
-          <li className="flex items-center  gap-7 bg-[#F8E7EB] py-3  relative pl-5 hover:bg-[#F8E7EB] py-4">
+          <li className="flex items-center  gap-7 bg-[#F8E7EB]   relative pl-5 hover:bg-[#F8E7EB] py-4">
             <img src={moveProject} alt="video icon" width={20} height={15} />
             <div className="bg-[#BE123C] absolute h-12   top-0 right-0 w-1"></div>
             <span className="hidden md:flex">Movies</span>
