@@ -47,10 +47,10 @@ function Home() {
           {/* hero section starts here */}
 
           {data?.slice(0, 5).map(
-            (item, index) =>
+            (movie, index) =>
               slider === index && (
                 <section
-                  key={item.id}
+                  key={movie.id}
                   className=""
                   style={{
                     backgroundPosition: "center",
@@ -59,7 +59,7 @@ function Home() {
                     objectFit: "cover",
                     width: "100%",
                     height: "500px",
-                    backgroundImage: `url(https://image.tmdb.org/t/p/w500/${item.poster_path})`,
+                    backgroundImage: `url(https://image.tmdb.org/t/p/w500/${movie.poster_path})`,
                   }}
                 >
                   {/* nav section starts here */}
@@ -123,7 +123,7 @@ function Home() {
                     <div className="text-white w-[404px] h-[285px] flex flex-col gap-4  md:ml-24   md:mt-7 m-5 p-2">
                       <h3 className=" md:text-[40px] text-[30px] leading-[56px] font-[700]">
                         {/* John Wick 3 : Parabellum */}
-                        {item.title}
+                        {movie.title}
                       </h3>
 
                       <div className="flex gap-8">
@@ -133,12 +133,12 @@ function Home() {
                         </div>
                         <div className="flex items-center gap-2">
                           <img src={PngItem} alt="pngitem" />
-                          <span>{calcMovieRating(item.vote_average)}</span>
+                          <span>{calcMovieRating(movie.vote_average)}</span>
                         </div>
                       </div>
 
                       <p className="text-white max-w-[302px] text-[14px] ">
-                        {item.overview}
+                        {movie.overview}
                       </p>
                       <button className="flex bg-[#BE123C]  w-[109px] text-[9px] gap-1 justify-center items-center rounded-sm    px-2 py-2">
                         {Icons.videoIcon()}
@@ -189,8 +189,8 @@ function Home() {
             {/* top 10 movies display */}
 
             <div className="grid  xl:grid-cols-4  lg:grid-cols-3 w-[90%] md:grid-cols-3 sm:grid-cols-2 grid-cols-1    justify-items-center col gap-x-8 gap-y-10">
-              {data.slice(0, 10).map((item) => (
-                <MovieCard key={item.id} item={item} />
+              {data.slice(0, 10).map((movie) => (
+                <MovieCard key={movie.id} movie={movie} />
               ))}
             </div>
           </section>
