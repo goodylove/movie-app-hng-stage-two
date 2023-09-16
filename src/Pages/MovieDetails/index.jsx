@@ -39,7 +39,7 @@ function MovieDetails() {
       {data !== undefined && (
         <main className="flex   h-screen  justify-center gap-10  ">
           <MovieDetailsSideBar />
-          <MovieDetailsMain data={data} />
+          <MovieDetailsMain movie={movie} />
         </main>
       )}
     </>

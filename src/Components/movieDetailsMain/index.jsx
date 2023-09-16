@@ -8,51 +8,51 @@ import useGetUtcTime from "../../Hooks/useGetUtcTime";
 
 // movie details main section
 
-function MovieDetailsMain({ data }) {
+function MovieDetailsMain({ movie }) {
   const { formattedDate } = useGetUtcTime();
 
   return (
     <div className="md:w-[70%]  px-3 overflow-y-scroll main overflow-x-hidden w-[100%]">
       <div className="mt-5 max-w-full">
         <img
-          src={`https://image.tmdb.org/t/p/w500/${data.poster_path}`}
+          src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
           alt="movie-poster"
           className="w-full h-[300px] object-cover rounded-lg"
         />
 
         <div className="flex items-center md:text-[16px] text-[10px] gap-1">
-          <span data-testid="movie-title" className="flex gap-4 md:pl-4">
-            {data.title}
+          <span movie-testid="movie-title" className="flex gap-4 md:pl-4">
+            {movie.title}
           </span>
 
-          <span data-testid="movie-release-date" className="md:px-3">
-            {formattedDate(data.release_date)}
+          <span movie-testid="movie-release-date" className="md:px-3">
+            {formattedDate(movie.release_date)}
           </span>
-          <span data-testid="movie-runtime">{data.runtime}</span>
+          <span movie-testid="movie-runtime">{movie.runtime}</span>
 
           <span>min</span>
 
           <span className="flex items-center  md:justify-end  text-[10px] md:px-10 pl-4">
             {Icons.star()}
-            {Number.parseFloat(data.vote_average)} | 350k
+            {Number.parseFloat(movie.vote_average)} | 350k
           </span>
         </div>
         <p
           className="md:text-[15px] font-[300] leading-[30px] text-[13px] my-4"
-          data-testid="movie-overview"
+          movie-testid="movie-overview"
         >
-          {data.overview}
+          {movie.overview}
         </p>
 
         {/* <div className=" flex-col md:flex-row flex md:items-center md:gap-5  md:justify-between w-full  font-[500]">
           <div className=" flex-col flex gap-3 md:mt-4 text-[10px] md:text-[17px] md:flex-row mt-4">
             <div className="flex gap-3">
-              <span data-testid="movie-release-date">
-                {formattedDate(data.release_date)}
+              <span movie-testid="movie-release-date">
+                {formattedDate(movie.release_date)}
               </span>
 
               <div>
-                <span data-testid="movie-runtime">{data.runtime}</span>
+                <span movie-testid="movie-runtime">{movie.runtime}</span>
                 <span>min</span>
               </div>
             </div>
@@ -61,7 +61,7 @@ function MovieDetailsMain({ data }) {
           <div className="text-[10px] md:text-[17px]">
             <span className="flex items-center  md:justify-end  text-[10px]">
               {Icons.star()}
-              {Number.parseFloat(data.vote_average)} | 350k
+              {Number.parseFloat(movie.vote_average)} | 350k
             </span>
           </div>
         </div> */}
