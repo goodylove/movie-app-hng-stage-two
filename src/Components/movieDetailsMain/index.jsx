@@ -8,8 +8,21 @@ import useGetUtcTime from "../../Hooks/useGetUtcTime";
 
 // movie details main section
 
+export const formatToUtcDate = (inputDateStr) => {
+  const inputDate = new Date(inputDateStr);
+  const utcDate = new Date(
+    inputDate.getUTCFullYear(),
+    inputDate.getUTCMonth(),
+    inputDate.getUTCDate(),
+    0,
+    0,
+    0
+  );
+  const formattedDate = utcDate.toISOString();
+  return formattedDate;
+};
 function MovieDetailsMain({ movie }) {
-  const { formattedDate } = useGetUtcTime();
+  // const { formattedDate } = useGetUtcTime();
 
   return (
     <div className="md:w-[70%]  px-3 overflow-y-scroll main overflow-x-hidden w-[100%]">
@@ -26,11 +39,9 @@ function MovieDetailsMain({ movie }) {
           </span>
 
           <span movie-testid="movie-release-date" className="md:px-3">
-            {formattedDate(movie.release_date)}
+            {formatToUtcDate(movie.release_date)}
           </span>
           <span movie-testid="movie-runtime">{movie.runtime}</span>
-
-          <span>min</span>
 
           <span className="flex items-center  md:justify-end  text-[10px] md:px-10 pl-4">
             {Icons.star()}
