@@ -16,16 +16,37 @@ function MovieDetailsMain({ data }) {
       <div className="mt-5 max-w-full">
         <img
           src={`https://image.tmdb.org/t/p/w500/${data.poster_path}`}
-          alt=""
+          alt="movie-poster"
           className="w-full h-[300px] object-cover rounded-lg"
         />
 
-        <div className=" flex-col md:flex-row flex md:items-center md:gap-5  md:justify-between w-full  font-[500]">
+        <div className="flex items-center md:text-[16px] text-[10px] gap-1">
+          <span data-testid="movie-title" className="flex gap-4 md:pl-4">
+            {data.title}
+          </span>
+
+          <span data-testid="movie-release-date" className="md:px-3">
+            {formattedDate(data.release_date)}
+          </span>
+          <span data-testid="movie-runtime">{data.runtime}</span>
+
+          <span>min</span>
+
+          <span className="flex items-center  md:justify-end  text-[10px] md:px-10 pl-4">
+            {Icons.star()}
+            {Number.parseFloat(data.vote_average)} | 350k
+          </span>
+        </div>
+        <p
+          className="md:text-[15px] font-[300] leading-[30px] text-[13px] my-4"
+          data-testid="movie-overview"
+        >
+          {data.overview}
+        </p>
+
+        {/* <div className=" flex-col md:flex-row flex md:items-center md:gap-5  md:justify-between w-full  font-[500]">
           <div className=" flex-col flex gap-3 md:mt-4 text-[10px] md:text-[17px] md:flex-row mt-4">
             <div className="flex gap-3">
-              <span data-testid="movie-title" className="flex gap-4">
-                {data.title}
-              </span>
               <span data-testid="movie-release-date">
                 {formattedDate(data.release_date)}
               </span>
@@ -43,16 +64,9 @@ function MovieDetailsMain({ data }) {
               {Number.parseFloat(data.vote_average)} | 350k
             </span>
           </div>
-        </div>
-        <div className="md:flex md:flex-row    md:items-center w-full md:justify-between gap-5 flex-col ">
+        </div> */}
+        <div className="md:flex md:flex-row    w-full md:justify-between gap-5 flex-col ">
           <div className="w-full flex flex-col items-center">
-            <p
-              className="md:text-[15px] font-[300] leading-[30px] text-[13px] my-3"
-              data-testid="movie-overview"
-            >
-              {data.overview}
-            </p>
-
             <div className="flex flex-col md:flex-row gap-3">
               <Button className="text-white bg-[#BE123C] rounded p-2 text-[13px] w-[220px]">
                 Top rated movie #65
