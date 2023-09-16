@@ -42,7 +42,7 @@ function MovieCard({ movie }) {
 
       <img
         data-testid="movie-poster"
-        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+        src={`https://image.tmdb.org/t/p/w500/${movie?.poster_path}`}
         alt={movie.title}
         className="w-[250px] h-[370px]"
       />
@@ -51,7 +51,7 @@ function MovieCard({ movie }) {
         data-testid="movie-release-date"
         className="text-[12px] leading-[15.62px] my-3"
       >
-        {formatToUtcDate(movie.release_date)}
+        {movie?.release_date}
       </h4>
 
       <h2
