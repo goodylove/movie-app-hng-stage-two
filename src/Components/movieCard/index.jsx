@@ -15,7 +15,7 @@ function MovieCard({ movie }) {
 
   const { calcMovieRating } = useCalculateRating();
 
-  const { formattedDate } = useGetUtcTime();
+  const { formatToUtcDate } = useGetUtcTime();
 
   const handleSaveFavorites = () => {
     setToggleFavoriteIcon((prev) => !prev);
@@ -51,7 +51,7 @@ function MovieCard({ movie }) {
         data-testid="movie-release-date"
         className="text-[12px] leading-[15.62px] my-3"
       >
-        {formattedDate(movie.release_date)}
+        {formatToUtcDate(movie.release_date)}
       </h4>
 
       <h2

@@ -1,9 +1,17 @@
 const useGetUtcTime = () => {
-  const getDateInUtcFormate = (date) => {
-    const today = new Date(date);
-    const utcDateString = today.toUTCString();
-    return utcDateString;
+  const formatToUtcDate = (inputDateStr) => {
+    const inputDate = new Date(inputDateStr);
+    const utcDate = new Date(
+      inputDate.getUTCFullYear(),
+      inputDate.getUTCMonth(),
+      inputDate.getUTCDate(),
+      0,
+      0,
+      0
+    );
+    const formattedDate = utcDate.toISOString();
+    return formattedDate;
   };
-  return { getDateInUtcFormate };
+  return { formatToUtcDate };
 };
 export default useGetUtcTime;
