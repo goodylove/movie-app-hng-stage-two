@@ -30,6 +30,7 @@ function MovieDetailsMain({ movie }) {
         <img
           src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
           alt="movie-poster"
+          data-testid="movie-poster"
           className="w-full h-[300px] object-cover rounded-lg"
         />
 
@@ -55,27 +56,6 @@ function MovieDetailsMain({ movie }) {
           {movie.overview}
         </p>
 
-        {/* <div className=" flex-col md:flex-row flex md:items-center md:gap-5  md:justify-between w-full  font-[500]">
-          <div className=" flex-col flex gap-3 md:mt-4 text-[10px] md:text-[17px] md:flex-row mt-4">
-            <div className="flex gap-3">
-              <span movie-testid="movie-release-date">
-                {formattedDate(movie.release_date)}
-              </span>
-
-              <div>
-                <span movie-testid="movie-runtime">{movie.runtime}</span>
-                <span>min</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="text-[10px] md:text-[17px]">
-            <span className="flex items-center  md:justify-end  text-[10px]">
-              {Icons.star()}
-              {Number.parseFloat(movie.vote_average)} | 350k
-            </span>
-          </div>
-        </div> */}
         <div className="md:flex md:flex-row    w-full md:justify-between gap-5 flex-col ">
           <div className="w-full flex flex-col items-center">
             <div className="flex flex-col md:flex-row gap-3">
