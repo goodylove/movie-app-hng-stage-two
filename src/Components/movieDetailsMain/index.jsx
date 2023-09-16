@@ -22,14 +22,14 @@ function MovieDetailsMain({ movie }) {
         />
 
         <div className="flex items-center md:text-[16px] text-[10px] gap-1">
-          <span movie-testid="movie-title" className="flex gap-4 md:pl-4">
+          <span data-testid="movie-title" className="flex gap-4 md:pl-4">
             {movie.title}
           </span>
 
-          <span movie-testid="movie-release-date" className="md:px-3">
+          <span data-testid="movie-release-date" className="md:px-3">
             {formatToUtcDate(movie.release_date)}
           </span>
-          <span movie-testid="movie-runtime">{movie.runtime}</span>
+          <span data-testid="movie-runtime">{movie.runtime}</span>
 
           <span className="flex items-center  md:justify-end  text-[10px] md:px-10 pl-4">
             {Icons.star()}
@@ -38,7 +38,7 @@ function MovieDetailsMain({ movie }) {
         </div>
         <p
           className="md:text-[15px] font-[300] leading-[30px] text-[13px] my-4"
-          movie-testid="movie-overview"
+          data-testid="movie-overview"
         >
           {movie.overview}
         </p>
