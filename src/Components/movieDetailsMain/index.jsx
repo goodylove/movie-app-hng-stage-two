@@ -31,11 +31,6 @@ function MovieDetailsMain({ movie }) {
           </span>
 
           <span data-testid="movie-runtime">{movie.runtime}</span>
-
-          <span className="flex items-center  md:justify-end  text-[10px] md:px-10 pl-4">
-            {Icons.star()}
-            {Number.parseFloat(movie.vote_average)} | 350k
-          </span>
         </div>
 
         <p
@@ -68,6 +63,7 @@ function MovieDetailsMain({ movie }) {
               <img src={ListImg} alt="listicon" />
               More watch options
             </Button>
+
             <div>
               <img src={GroupImg} alt="gruopimg" width={200} />
             </div>

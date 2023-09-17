@@ -61,18 +61,6 @@ function MovieCard({ movie }) {
         {movie.title}
       </h2>
 
-      <div className="flex gap-8 text-[10px] my-2">
-        <div className="flex items-center gap-2">
-          <img src={ImbImg} alt="imb-img" />
-          <span>850/100</span>
-        </div>
-
-        <div className="flex items-center gap-2">
-          <img src={PngItem} alt="pngImage" />
-          <span>{calcMovieRating(movie.vote_average)}</span>
-        </div>
-      </div>
-
       <Link to={`/movies/${movie.id}`}>
         <span className="text-[13px] underline"> view Details</span>
       </Link>
