@@ -29,6 +29,7 @@ function MovieDetailsMain({ movie }) {
           <span data-testid="movie-release-date" className="md:px-3">
             {formatToUtcDate(movie.release_date)}
           </span>
+
           <span data-testid="movie-runtime">{movie.runtime}</span>
 
           <span className="flex items-center  md:justify-end  text-[10px] md:px-10 pl-4">
@@ -36,6 +37,7 @@ function MovieDetailsMain({ movie }) {
             {Number.parseFloat(movie.vote_average)} | 350k
           </span>
         </div>
+
         <p
           className="md:text-[15px] font-[300] leading-[30px] text-[13px] my-4"
           data-testid="movie-overview"
