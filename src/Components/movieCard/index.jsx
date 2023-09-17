@@ -72,6 +72,7 @@ function MovieCard({ movie }) {
           <span>{calcMovieRating(movie.vote_average)}</span>
         </div>
       </div>
+
       <Link to={`/movies/${movie.id}`}>
         <span className="text-[13px] underline"> view Details</span>
       </Link>

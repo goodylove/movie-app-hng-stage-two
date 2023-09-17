@@ -51,6 +51,7 @@ function MovieDetailsMain({ movie }) {
               <Button className="text-white bg-[#BE123C] rounded p-2 text-[13px] w-[220px]">
                 Top rated movie #65
               </Button>
+
               <div className="border-2 flex items-center justify-between rounded p-1 w-[220px]">
                 Awards 9 nominations
                 <img src={Arrow} alt="arrow" />
