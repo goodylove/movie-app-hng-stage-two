@@ -1,14 +1,22 @@
-MovieBox
-MovieBox is a web application built with React js and Tailwind css that allows users to discover information about movies using the TMDB (The Movie Database) API.
+MovieBox is a web application built with react js and Tailwind cssthat allows users to discover information about movies using the TMDB (The Movie Database) API.
 
-Demo
-you can view the demo link here :https://movie-app-hng-stage-two.vercel.app/
-
-Current Features
+## Current Features
 
 View top rated movies.
-View movie details, including the title, overview, release date.
-Future Features
+View movie details, including the title, overview, release date, and more.
+
+## Demo
+
+You can view the live demo of the project here :https://movie-app-hng-stage-two.vercel.app/.
+
+## Technologies Used
+
+React js
+Tailwind css
+TMDB API
+React Icons
+Getting Started
+To run this project locally, follow these steps:
 
 Clone the repository:
 
@@ -35,8 +43,19 @@ npm start
 
 # or
 
-yarn dev
+yarn start
 Open your browser and access the app at http://localhost:3000.
 
 Usage
-Home Page: The homepage displays a random upcoming movie with a backdrop image, title, and overview. Users can click on each movie to "View Details" details of each movie.
+Home Page: The homepage displays a random upcoming movie with a backdrop image, title, and overview.
+
+Movie Details: When a user clicks on a movie's "View Details" button, they are taken to a page with detailed information about the movie, including the title, overview, release date, vote average, and more. If available, the user can also watch the movie's trailer.
+
+Contributing
+Contributions are welcome! If you would like to contribute to Movieapp, please follow these steps:
+
+Fork the repository.
+Create a new branch for your feature or bug fix: git checkout -b feature/new-feature.
+Make your changes and commit them: git commit -m 'Add new feature'.
+Push to your branch: git push origin feature/new-feature.
+Open a pull request on the main repository.
