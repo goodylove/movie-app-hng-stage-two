@@ -73,7 +73,7 @@ function MovieCard({ movie }) {
         </div>
       </div>
       <Link to={`/movies/${movie.id}`}>
-        <span className="text-[13px] underline">Continue to view Details</span>
+        <span className="text-[13px] underline"> view Details</span>
       </Link>
     </div>
   );
